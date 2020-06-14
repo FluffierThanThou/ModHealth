@@ -1,0 +1,26 @@
+{
+  "name": "discord",
+  "version": "0.0.0",
+  "description": "a small discord bot for mod-health-info",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karel Kroeze <karel.kroeze@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/chart.js": "^2.9.14",
+    "chart.js": "^2.9.3",
+    "chartjs-node-canvas": "^3.0.1",
+    "chrono-node": "^1.4.3",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "google-palette": "^1.1.0",
+    "moment": "^2.24.0",
+    "mongodb": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "@types/mongodb": "^3.3.16"
+  }
+}

@@ -1,0 +1,44 @@
+version: '3'
+
+volumes:
+    dbdata:
+
+services:
+    mongo:
+        image: mongo
+        volumes:
+            - "dbdata:/data/db"
+        restart: always
+    
+    hugslib:
+        build: ./hugslib
+        tty: true
+        depends_on: 
+            - mongo
+        links: 
+            - mongo
+        volumes: 
+            - "./hugslib:/app"
+
+    discord:
+        build: ./discord
+        depends_on: 
+            - mongo
+        links: 
+            - mongo
+        volumes: 
+            - "./discord:/app"
+
+    frontend:
+        build: ./frontend
+        depends_on: 
+            - mongo
+        links: 
+            - mongo
+        volumes:
+            - "./frontend:/app"
+        ports:
+            - "80:3000"
+    
+    
+            

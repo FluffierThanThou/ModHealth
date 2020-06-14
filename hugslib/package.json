@@ -1,0 +1,44 @@
+{
+  "name": "hugslib-log-fetcher",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "author": "fluffy.l2032@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "grammar:watch": "watch \"npm run grammar:build\" ./src/grammar",
+    "grammar:build": "cp ./src/grammar/lexer.js ./dist/grammar/lexer.js && nearleyc -o ./dist/grammar/grammar.js ./src/grammar/grammar.ne",
+    "grammar:test": "nearley-test -q ./dist/grammar/grammar.js < ./data/699e4f083d44758af0b2609a827bc486.txt",
+    "grammar:watch-test": "watch --wait=.5 \"npm run grammar:test\" ./dist/grammar",
+    "grammar:dev": "concurrently -n build,test -c blue,green npm:grammar:watch npm:grammar:watch-test"
+  },
+  "dependencies": {
+    "@types/async": "^3.0.7",
+    "@types/pretty-bytes": "^5.2.0",
+    "@types/string-similarity": "^3.0.0",
+    "async": "^3.1.1",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "moment": "^2.24.0",
+    "mongodb": "^3.5.2",
+    "moo": "^0.5.1",
+    "mz": "^2.7.0",
+    "nearley": "^2.19.1",
+    "node-fetch": "^2.6.0",
+    "pretty-bytes": "^5.3.0",
+    "string-similarity": "^4.0.1",
+    "worker-farm": "^1.7.0"
+  },
+  "devDependencies": {
+    "@octokit/rest": "^16.41.0",
+    "@types/lodash": "^4.14.149",
+    "@types/md5": "^2.1.33",
+    "@types/moment": "^2.13.0",
+    "@types/mongodb": "^3.3.15",
+    "@types/moo": "^0.5.1",
+    "@types/mz": "^2.7.0",
+    "@types/nearley": "^2.11.1",
+    "@types/node-fetch": "^2.5.4",
+    "typescript": "^3.7.5"
+  }
+}
