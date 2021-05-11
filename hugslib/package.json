@@ -17,7 +17,7 @@
     "@types/string-similarity": "^3.0.0",
     "async": "^3.1.1",
     "dotenv": "^8.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "md5": "^2.2.1",
     "moment": "^2.24.0",
     "mongodb": "^3.5.2",
